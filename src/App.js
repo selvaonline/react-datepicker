@@ -10,7 +10,10 @@ function App() {
   const autoCorrectedDatePipe = createAutoCorrectedDatePipe("mm/dd/yyyy");
 
   const handleDateChange = (date) => {
+    const formattedDate = typeof date === "string" ? date.replace(/^(\d{1})$/, "0$1") : null;
+
     setSelectedDate(date);
+
   };
 
   return (
